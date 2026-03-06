@@ -1,7 +1,5 @@
-# My writeups
+# HackTheBox
 
-## HackTheBox
+# TryHackMe
 
-## TryHackMe
-
-## HackSmarter
+# HackSmarter
