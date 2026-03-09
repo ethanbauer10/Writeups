@@ -163,8 +163,7 @@ SMB         10.129.234.44   445    DC               1107: RETRO\jburley (SidType
 SMB         10.129.234.44   445    DC               1108: RETRO\HelpDesk (SidTypeGroup)
 SMB         10.129.234.44   445    DC               1109: RETRO\tblack (SidTypeUser)
 ```
-From this list ill make a userlist
-AS-REP roasting failed
+From this list ill make a userlist  AS-REP roasting failed
 
 # `Trainees` share
 ```python
